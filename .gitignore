@@ -29,4 +29,3 @@ htmlcov/
 # server
 log/
 nohup.out
-uwsgi_config.ini
