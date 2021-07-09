@@ -30,3 +30,4 @@ htmlcov/
 log/
 nohup.out
 .ipynb_checkpoints
+static/images/.ipynb_checkpoints
