@@ -29,4 +29,4 @@ htmlcov/
 # server
 log/
 nohup.out
-uwsgi_config.ini
+.ipynb_checkpoints
