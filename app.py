@@ -38,7 +38,7 @@ def add_picture():
 
 @app.route("/hello", methods=["GET", "POST"])
 def hello():
-    return "hello merged"
+    return "hello update from shing's repo"
 
 
 # default setting
