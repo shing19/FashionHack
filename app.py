@@ -18,7 +18,6 @@ CHANGE_EXTENSIONS = {
     'JPEG': 'jpg'
 }
 
-
 @app.route("/upload_image", methods=["POST"])
 def add_picture():
     img = request.files['image']
@@ -42,23 +41,11 @@ def hello():
 
 
 # default setting
+
 output=[]#("message stark","hi")]
 @app.route('/')
 def home_page():
-    return render_template("IY_Home_page.html",result=output)
-@app.route('/about')
-def about_page():
-    return render_template("about.html",result=output)
-@app.route('/contact')
-def contact_page():
-    return render_template("contact.html",result=output)
-@app.route('/charts')
-def charts_page():
-    return render_template("charts.html",result=output)
-
-@app.route('/cam')
-def sign_page():
-    return render_template("camera.html")
+    return render_template("index.html",result=output)
 
 @app.route('/result',methods=["POST","GET"])
 def Result():
@@ -69,7 +56,7 @@ def Result():
             output.clear()
         else:
             try:
-                r = requests.post('http://13.88.218.187:5005/webhooks/rest/webhook', json={"message": result})
+                r = requests.post('http://1.117.208.226:5005/webhooks/rest/webhook', json={"message": result})
                 print("Bot says, ")
                 for i in r.json():
                     bot_message = i['text']
@@ -79,7 +66,7 @@ def Result():
                 output.extend([("message parker", result), ("message stark", "We are unable to process your request at the moment. Please try again...")])
 
         print(output)
-        return render_template("IY_Home_page.html",result=output)
+        return render_template("index.html",result=output)
 
 if __name__=="__main__":
     app.run(debug=True)#,host="1.117.208.226")
